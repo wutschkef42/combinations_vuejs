@@ -32,19 +32,19 @@ export default {
   
     const word_list = [
       { str: 'Résistante', is_winner: 1 },
-      { str: 'Matériaux froid', is_winner: 1 },
+      { str: 'Matériaux froid', is_winner: 0 },
       { str: 'Inoxydable', is_winner: 1 },
       { str: 'Indice de réfraction éléve', is_winner: 1 },
       { str: 'Oxydable', is_winner: 0 },
       { str: 'Fragile', is_winner: 0 },
-      { str: 'Confortable', is_winner: 0 },
-      { str: 'Matériaux chaud', is_winner: 0 },
+      { str: 'Confortable', is_winner: 1 },
+      { str: 'Matériaux chaud', is_winner: 1 },
       { str: 'Indice de réfraction faible', is_winner: 0 },
     ];
 
     return {
       game_over: 0,
-      word_count: 4,
+      word_count: 5,
       click_state: 0,
       current_highlight: -1,
       word_list: initGameState(word_list),
@@ -59,7 +59,7 @@ export default {
         this.word_count - 1 : this.word_count + 1;
       if (this.game_over) {
         this.word_list = initGameState(this.word_list);
-        this.word_count = 4;
+        this.word_count = 5;
         this.game_over = 0;
       }
       if (this.word_count == 0) {
